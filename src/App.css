@@ -1,0 +1,432 @@
+/* ------------------------------------------------------------------- */
+/* 1. Global & Reset */
+/* ------------------------------------------------------------------- */
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --color-primary: #6a11cb; /* Ungu gradien start */
+    --color-primary-dark: #2575fc; /* Biru gradien end */
+    --color-secondary: #4b5563; /* Abu-abu netral */
+    --color-text-light: #ffffff; /* Putih */
+    --color-text-dark: #1f2937; /* Abu gelap untuk teks */
+    --color-background-light: #f7fafc; /* Putih sangat terang */
+    --color-card-light: #ffffff; /* Putih polos kartu */
+    --color-success: #34d399; /* Hijau cerah */
+    --color-error: #f87171; /* Merah cerah */
+    --color-warning: #fbbf24; /* Kuning cerah */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#root {
+    width: 100%;
+}
+
+.App {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem 3rem;
+    background: var(--color-background-light);
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15);
+    border-radius: 1rem;
+}
+
+/* ------------------------------------------------------------------- */
+/* 2. Header & Logo */
+/* ------------------------------------------------------------------- */
+
+.App-header {
+    background: var(--color-card-light);
+    padding: 1rem 0;
+    box-shadow: 0 2px 8px rgba(101, 50, 255, 0.1);
+    border-bottom: 4px solid var(--color-primary);
+}
+
+.App-header h1 {
+    font-size: 1.75rem;
+    text-align: center;
+    color: var(--color-text-dark);
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    color:white;
+}
+
+.logo-text {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-left: 0.5rem;
+    color: white;
+}
+
+.logo-section svg {
+    stroke: var(--color-primary);
+    fill: none;
+}
+
+/* ------------------------------------------------------------------- */
+/* 3. Layout: Landing & Input */
+/* ------------------------------------------------------------------- */
+
+.dark-bg {
+    background: var(--color-background-light);
+}
+
+.dark-card {
+    background: var(--color-card-light);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px rgba(101, 50, 255, 0.1);
+    background: linear-gradient(145deg, #ffffff, #f5f7ff);
+}
+
+.split-layout-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 2rem;
+}
+
+.left-promo-panel {
+    padding: 2rem;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    border-radius: 1rem;
+    color: var(--color-text-light);
+    box-shadow: 0 8px 24px rgba(101, 50, 255, 0.3);
+}
+
+.left-promo-panel h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.left-promo-panel p {
+    font-size: 1.1rem;
+    opacity: 0.85;
+}
+
+/* Kolom Input Pertanyaan (Bagian Kanan) */
+.input-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-dark);
+}
+
+.text-input {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    border: 2px solid #d1d5db;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    resize: vertical;
+    min-height: 150px;
+    background-color: #ffffff;
+    color: var(--color-text-dark);
+    transition: border-color 0.3s ease;
+    font-family: monospace;
+}
+
+.text-input::placeholder {
+    color: #9ca3af;
+}
+
+.text-input:focus {
+    outline: none;
+    border-image-slice: 1;
+    border-width: 2px;
+    border-image-source: linear-gradient(90deg, #6a11cb, #2575fc);
+}
+
+/* ------------------------------------------------------------------- */
+/* 4. Buttons & Controls */
+/* ------------------------------------------------------------------- */
+
+button {
+    cursor: pointer;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.primary-btn {
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: var(--color-text-light);
+    box-shadow: 0 4px 12px rgba(101, 50, 255, 0.4);
+}
+
+.primary-btn:hover:not(:disabled) {
+    background: linear-gradient(90deg, #2575fc, #6a11cb);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(101, 50, 255, 0.6);
+}
+
+.secondary-btn {
+    background: linear-gradient(90deg, #a0aec0, #718096);
+    color: var(--color-text-light);
+}
+
+.secondary-btn:hover:not(:disabled) {
+    background: linear-gradient(90deg, #718096, #a0aec0);
+    transform: translateY(-1.5px);
+}
+
+.error-message {
+    color: var(--color-error);
+    background-color: rgba(248, 113, 113, 0.15);
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    margin-top: 1rem;
+    border: 1.5px solid var(--color-error);
+    font-weight: 600;
+}
+
+/* Post result controls */
+.post-result-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.result-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.view-results-button {
+    flex-grow: 1;
+}
+
+/* Specific button adjustments */
+.view-results-button.materi-button, .view-results-button.flashcard-button {
+    background-color: #3B82F6; /* Blue for contrast */
+}
+
+.view-results-button.materi-button:hover:not(:disabled),
+.view-results-button.flashcard-button:hover:not(:disabled) {
+    background-color: #2563EB;
+}
+
+.generate-new-button {
+    width: 100%;
+}
+
+.back-button {
+    margin-bottom: 2rem;
+    width: fit-content;
+    background-color: #6b7280; /* Gray-500 */
+    color: var(--color-text-light);
+}
+
+.back-button:hover {
+    background-color: #4b5563;
+}
+
+/* ------------------------------------------------------------------- */
+/* 5. Quiz/Flashcard View */
+/* ------------------------------------------------------------------- */
+
+.quiz-view {
+    padding-top: 2rem;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--color-text-dark);
+    text-align: left;
+}
+
+.quiz-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.quiz-card {
+    background: var(--color-card-light);
+    border: 2px solid transparent;
+    border-radius: 1rem;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 6px 12px rgba(101, 50, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.quiz-card.correct {
+    border-image-slice: 1;
+    border-width: 3px;
+    border-image-source: linear-gradient(90deg, #10b981, #34d399);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+.quiz-card.incorrect {
+    border-image-slice: 1;
+    border-width: 3px;
+    border-image-source: linear-gradient(90deg, #f87171, #e53e3e);
+    box-shadow: 0 0 20px rgba(248, 113, 113, 0.3);
+}
+
+.quiz-question {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    color: var(--color-text-dark);
+}
+
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.option-button {
+    background-color: #f3f4f6;
+    color: var(--color-text-dark);
+    border: 1.5px solid #cbd5e1;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    padding: 0.7rem 1rem;
+    transition: background-color 0.3s, border-color 0.3s;
+    text-align: left;
+}
+
+.option-button:hover:not(:disabled) {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border-color: var(--color-primary);
+}
+
+.option-button.selected {
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: white;
+    border-color: transparent;
+    transform: scale(1.02);
+}
+
+.option-button.correct-answer-reveal {
+    background: linear-gradient(90deg, #10b981, #34d399);
+    color: white;
+    font-weight: 700;
+}
+
+.option-button.selected-incorrect {
+    background: linear-gradient(90deg, #f87171, #e53e3e);
+    color: white;
+    border-color: transparent;
+    font-weight: 700;
+}
+
+.feedback-message {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    background-color: rgba(31, 41, 55, 0.1); /* Light translucent dark */
+    color: var(--color-text-dark);
+}
+
+/* ------------------------------------------------------------------- */
+/* 6. Score & Final Controls */
+/* ------------------------------------------------------------------- */
+
+.score-summary {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: var(--color-text-light);
+    box-shadow: 0 6px 16px rgba(101, 50, 255, 0.35);
+}
+
+.submit-quiz-button {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+/* ------------------------------------------------------------------- */
+/* 7. Materi View */
+/* ------------------------------------------------------------------- */
+
+.materi-content {
+    padding: 2.5rem;
+    color: var(--color-text-dark);
+}
+
+.materi-content h1, .materi-content h2, .materi-content h3 {
+    color: var(--color-text-dark);
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+}
+
+.materi-content p {
+    margin-bottom: 1rem;
+    color: var(--color-text-dark);
+}
+
+/* ------------------------------------------------------------------- */
+/* 8. Responsiveness */
+/* ------------------------------------------------------------------- */
+
+@media (min-width: 768px) {
+    .split-layout-container {
+        flex-direction: row;
+    }
+
+    .left-promo-panel, .input-section {
+        flex: 1;
+        max-width: 50%;
+    }
+    
+    .left-promo-panel h1 {
+        font-size: 3rem;
+    }
+    
+    .view-results-button {
+        padding: 1rem 1.5rem;
+    }
+}
