@@ -48,7 +48,7 @@ function App() {
         setIsSubmitted(false); // Pastikan status submission direset
 
         try {
-            const BACKEND_URL = 'http://localhost:3000/api/generate-content'; 
+            const BACKEND_URL = 'https://3000-firebase-prepai-1763738031556.cluster-ejd22kqny5htuv5dfowoyipt52.cloudworkstations.dev/api/generate-content'; 
             
             const response = await fetch(BACKEND_URL, { 
                 method: 'POST',
